@@ -20,9 +20,9 @@ def process_side_bar_inputs(df):
     st.sidebar.title('Фильтрация')
     selected1 = st.sidebar.checkbox("Включить фильтр №1")
     filtr_priznak = st.sidebar.selectbox("Признак", tuple(df.columns[1:]))
-    bolse_menshe1 = st.sidebar.selectbox("", ('Больше','Меньше'))
+    bolse_menshe1 = st.sidebar.selectbox("Выберите отношение", ('Больше','Меньше'))
     # Number input
-    choice = st.sidebar.number_input(f"Choose a number (min = {min(df[filtr_priznak])}, max = {max(df[filtr_priznak])})", min(df[filtr_priznak]), max(df[filtr_priznak]))
+    choice = st.sidebar.number_input(f"Выберите номер (min = {min(df[filtr_priznak])}, max = {max(df[filtr_priznak])})", min(df[filtr_priznak]), max(df[filtr_priznak]))
     if selected1:
         if str(bolse_menshe1) == 'Больше':
             df1 = df[ df[str(filtr_priznak)] >= choice] 
