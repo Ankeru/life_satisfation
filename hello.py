@@ -1,7 +1,6 @@
 import streamlit as st
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
 import seaborn as sns
 from PIL import Image
 
@@ -16,9 +15,6 @@ def show_main_page():
         layout="wide",
         initial_sidebar_state="auto",
         page_title="Life satisfation",
-
-        # page_icon=image,
-
     )
     st.title("Life satisfation")    
 
@@ -56,27 +52,6 @@ def prepare_df():
     # убираем пробелы в заголовке
     df = df.rename(columns=lambda x: x.strip())
     return df
-
-
-
-
-
-
-
-# st.dataframe(df)
-# # st.text(df.sort_values(by='life_satisfaction', ascending=False).iloc[0][0])
-# st.text(f"Страна с самым высоким уровнем жизни - {df.sort_values(by='Life satisfaction', ascending=False).iloc[0][0]}!")
-# age = st.sidebar.slider("Возраст", min_value=1, max_value=80, value=20,
-#                             step=1)
-# if age > 50:
-#     st.write('DA')
-
-
-# json
-# st.json(df.to_dict())
-# st.metric("KPI", 56, 3)
-# static table
-# st.table(df)
 
 if __name__ == "__main__":    
     process_main_page()
